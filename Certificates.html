@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Background</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🧭 Navigation Header -->
+    <header class="navbar">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="Yzz.png" alt="YZ Logo" class="logo-img" />
+        </div>
+        <div class="name">Yazan Almalki</div>
+      </div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="Yazan.html">Home</a></li>
+          <li><a href="aboutMe.html">About me</a></li>
+          <li><a href="Certificates.html">Certificates</a></li>
+          <li><a href="Yazan_Almalki_CV.pdf" target="_blank">View CV</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+    </header>
+
+    <!-- 🔒 Main Content -->
+
+    <!-- Floating Icons -->
+    <div class="floating-icons"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <section class="certificate-section" id="Certificates">
+      <div class="works-container">
+        <div class="section-header">
+          <h1 class="MyR">My Recent</h1>
+          <h2 class="MyR-sub">Certificates</h2>
+        </div>
+        <div class="certificates-grid">
+          <article class="certificate-card">
+            <a href="assets/imgs/c23.jpg" target="_blank">
+              <img src="assets/imgs/c23.jpg" alt="Landing Page Project" />
+            </a>
+            <h3>Teamwork Skills</h3>
+            <p>Issued by Edraak Academy • Dec 2024</p>
+          </article>
+          <article class="certificate-card">
+            <a href="assets/imgs/c33.jpg" target="_blank">
+              <img
+                src="assets/imgs/c33.jpg"
+                alt="Web Application Certificate"
+              />
+            </a>
+            <h3>Delegation Skills</h3>
+            <p>Issued by Edraak Academy • Dec 2024</p>
+          </article>
+          <article class="certificate-card">
+            <a href="assets/imgs/C22.jpg" target="_blank">
+              <img src="assets/imgs/C22.jpg" alt="Mobile App Project" />
+            </a>
+            <h3>Work Plan</h3>
+            <p>Issued by Edraak Academy • Dec 2024</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <script src="icons.js"></script>
+    <script>
+      var sidemenu = document.getElementById("nav-links");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-500px";
+      }
+    </script>
+  </body>
+</html>

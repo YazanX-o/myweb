@@ -1,0 +1,660 @@
+/* Root variables for theme and design customization */
+:root {
+  --primary-color: #c0c0c0; /* Light gray accent color */
+  --primary-dark: #118b22;
+  --bg-dark: #0a1929; /* Main background color */
+  --bg-darker: #061320;
+  --text-light: rgba(255, 255, 255, 0.95);
+  --text-dim: rgba(255, 255, 255, 0.7); /* Dimmed white text */
+  --nav-height: 80px; /* Navigation bar height */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --secondary-color: #7b42f6; /* Secondary accent (purple) */
+  --card-bg: rgba(13, 32, 59, 0.824);
+  --gradient: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  ); /* Gradient using primary and secondary colors */
+}
+
+/* Base container for layout padding */
+.container {
+  padding: 10px 5%;
+}
+
+/* Profile card styling with blurred background and border */
+.profile-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
+}
+
+/* Profile header layout for avatar and info */
+.profile-header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Avatar wrapper with circular border and glow effect */
+.profile-avatar {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.3);
+}
+
+/* Avatar image styling */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect on avatar image */
+.profile-avatar:hover .profile-image {
+  transform: scale(1.1);
+}
+
+/* Rotating gradient border effect */
+.profile-avatar::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), transparent);
+  z-index: -1;
+  animation: rotateGradient 3s linear infinite;
+}
+
+/* Gradient rotation animation */
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive avatar size for tablets/mobile */
+@media (max-width: 768px) {
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Main profile title */
+.profile-info h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Profile subtitle or role */
+.profile-info h2 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Summary paragraph styling */
+.profile-summary p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+/* Contact information layout */
+.contact-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Contact info links and spans */
+.contact-info a,
+.contact-info span {
+  font-size: 1rem;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Skills section margin */
+.skills-section {
+  margin: 60px 0;
+}
+
+/* Individual skill category block */
+.skills-category {
+  margin-bottom: 40px;
+}
+
+/* Title for skill categories */
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Icon next to category titles */
+.category-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+/* Responsive grid layout for skill cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Skill card styling */
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background hover layer */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 168, 255, 0.1),
+    rgba(123, 66, 246, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover elevation effect */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Show background overlay on hover */
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* Icon/image styling in skill cards */
+.skill-card i,
+.skill-card img {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Size for skill icons */
+.skill-card img {
+  height: 48px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+/* Skill card title */
+.skill-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 15px 0 10px;
+  letter-spacing: 0.2px;
+}
+
+/* Skill description text */
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* Highlighted color for icons */
+.colored-icon {
+  color: #00a8ff;
+}
+
+/* Grid layout for timeline section */
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+/* Card for timeline entries */
+.timeline-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Header for timeline entries */
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Timeline date text */
+.timeline-date {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Responsive project grid layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Individual project card */
+.project-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Hover lift for project cards */
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header section of project card */
+.project-header {
+  background: rgba(0, 168, 255, 0.1);
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Technology tags for each project */
+.project-tech {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+/* Individual tech tag */
+.project-tech span {
+  background: rgba(0, 168, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+/* Project title */
+.project-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Project content text */
+.project-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 15px;
+}
+
+/* Project content layout */
+.project-content {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+/* Project list formatting */
+.project-content ul {
+  margin: 15px 0;
+  list-style: none;
+}
+
+/* Project list item styling */
+.project-content li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Custom bullet symbol */
+.project-content li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Twinkle animation (unused here but defined) */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Rotation animation (used for gradient borders) */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styling for tablets/mobile */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info {
+    justify-content: center;
+  }
+
+  .timeline-container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .skill-card i,
+  .skill-card img {
+    font-size: 2.5rem;
+  }
+
+  .profile-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .category-title {
+    font-size: 1.4rem;
+  }
+
+  .profile-summary p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .category-icon {
+    font-size: 1.6rem;
+  }
+}
+
+/* Floating animation for icons */
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Icon float effect */
+.skill-card i,
+.skill-card img {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* Pause animation on hover */
+.skill-card:hover i,
+.skill-card:hover img {
+  animation-play-state: paused;
+}
+
+/* Icon sizing and alignment */
+.skill-card i,
+.skill-card img,
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0;
+}
+
+/* Icon pulsing effect */
+.skill-card i,
+.skill-card img,
+.tech-icon {
+  animation: iconPulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 168, 255, 0.2));
+}
+
+/* Hover glow effect */
+.skill-card:hover i,
+.skill-card:hover img,
+.skill-card:hover .tech-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(0, 168, 255, 0.4));
+  animation-play-state: paused;
+}
+
+/* Pulse animation for icons */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(0, 168, 255, 0.2));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(0, 168, 255, 0.4));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(0, 168, 255, 0.2));
+  }
+}
+
+/* Specific icon drop shadows */
+.skill-card i.devicon-python-plain {
+  filter: drop-shadow(0 0 8px rgba(55, 118, 171, 0.4));
+}
+.skill-card i.devicon-rstudio-plain {
+  filter: drop-shadow(0 0 8px rgba(117, 170, 219, 0.4));
+}
+.skill-card .java-icon {
+  filter: drop-shadow(0 0 8px rgba(19, 6, 84, 0.3));
+}
+
+/* Responsive icon sizing */
+@media (max-width: 768px) {
+  .skill-card i,
+  .skill-card img,
+  .tech-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 10px;
+  }
+}
+
+/* Tech icon styling */
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0;
+}
+
+/* Hover scale effect for tech icon */
+.skill-card:hover .tech-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* General text alignment for sections and headings */
+.section-title,
+.category-title,
+.profile-info h1,
+.profile-info h2,
+.timeline-header h3,
+.project-header h3 {
+  text-align: left;
+}
+
+/* Modified padding/border direction */
+.category-title {
+  border-right: none;
+  border-left: 4px solid var(--primary-color);
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+/* Contact layout reset */
+.contact-info {
+  justify-content: flex-start;
+}
+
+/* List alignment in timeline and projects */
+.timeline-content ul,
+.project-content ul {
+  padding-left: 20px;
+  padding-right: 0;
+  text-align: left;
+}
+
+/* Text alignment for content blocks */
+.skill-card,
+.project-card,
+.timeline-card {
+  text-align: left;
+}
+
+/* Center icon in skill card */
+.skill-card i,
+.skill-card img,
+.tech-icon {
+  text-align: center;
+}
+
+/* Section title styling */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+/* Icon in section title */
+.section-title i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  background: rgba(13, 32, 59, 0.5);
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Hover scale effect for section icons */
+.section-title:hover i {
+  transform: scale(1.1);
+  background: rgba(9, 21, 39, 0.623);
+}
+
+/* Responsive section title */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title i {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+}

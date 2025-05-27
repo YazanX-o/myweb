@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Background</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleb.css" />
+  </head>
+
+  <body>
+    <!-- 🧭 Navigation Header -->
+    <header class="navbar">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="Yzz.png" alt="Yazan Logo" class="logo-img" />
+        </div>
+        <div class="name">Yazan Almalki</div>
+      </div>
+
+      <nav>
+        <ul id="nav-links">
+          <li><a href="Yazan.html">Home</a></li>
+          <li><a href="#aboutMe">About me</a></li>
+          <li><a href="Certificates.html">Certificates</a></li>
+          <li><a href="Yazan_Almalki_CV.pdf" target="_blank">View CV</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+    </header>
+
+    <!-- 🔒 Main Content -->
+
+    <!-- Floating Icons -->
+    <div class="floating-icons"></div>
+
+    <!-- About Section -->
+    <div id="about">
+      <div class="container">
+        <!-- 👤 Profile Section -->
+        <section class="profile-section">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar">
+                <img src="assets/imgs/Malki.jpeg" class="profile-image" />
+              </div>
+              <div class="profile-info">
+                <h1>Yazan Almalki</h1>
+                <h2>cyber security analyst</h2>
+                <div class="contact-info">
+                  <span
+                    ><i class="fas fa-map-marker-alt"></i> Saudi Arabia</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-summary">
+              <p>
+                Cybersecurity Analyst with a passion for threat detection and
+                incident response within Security Operations Center (SOC)
+                environments. Currently building skills in monitoring,
+                analyzing, and responding to security events, with a strong
+                interest in leveraging SIEM tools to identify threats and
+                enhance organizational security posture.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 💻 Skills Section -->
+        <section class="skills-section">
+          <h2 class="section-title">
+            <i class="fas fa-code"></i> Skills & Expertise
+          </h2>
+
+          <!-- Programming -->
+          <div class="skills-category">
+            <h3 class="category-title">Programming</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <h3>Java</h3>
+                <p>
+                  object-oriented language used for cross-platform application
+                  development.
+                </p>
+              </div>
+
+              <div class="skill-card">
+                <i class="devicon-python-plain colored"></i>
+                <h3>Python</h3>
+                <p>Automation, Scripting, Security Tools</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Tools -->
+          <div class="skills-category">
+            <h3 class="category-title">
+              <i class="fas fa-chart-line"></i> Security tools
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <img src="assets/imgs/Logo_nmap.png" alt="logo Nmap" />
+                <h3>Nmap</h3>
+                <p>
+                  Network scanning tool used for discovering hosts, services,
+                  and vulnerabilities in a network.
+                </p>
+              </div>
+
+              <div class="skill-card">
+                <img
+                  src="https://gitlab.com/uploads/-/system/project/avatar/11903579/kali-dnsenum.png"
+                  alt="DNs recon"
+                />
+                <h3>Dns recon</h3>
+                <p>
+                  Tool for performing DNS enumeration to gather information
+                  about domain names and DNS records.
+                </p>
+              </div>
+
+              <div class="skill-card">
+                <img src="assets/svg/burp.svg" alt="Burp Suite logo" />
+                <h3>Burp Suite</h3>
+                <p>
+                  Web vulnerability scanner used for testing and analyzing the
+                  security of web applications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Labs -->
+          <div class="skills-category">
+            <h3 class="category-title">
+              <i class="fa-solid fa-flask"></i> Labs
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Hack_The_Box_Logo_2.png"
+                  alt="Hack_The_Box_Logo"
+                />
+                <h3>Hack the box</h3>
+                <p>
+                  Hands-on cybersecurity labs for practicing penetration
+                  testing, ethical hacking, and real-world attack simulations.
+                </p>
+              </div>
+
+              <div class="skill-card">
+                <img src="assets/imgs/tryhack.png" alt="tryHackMe_Logo" />
+                <h3>tryHackMe</h3>
+                <p>
+                  TryHackMe for learning ethical hacking, penetration testing,
+                  and cybersecurity fundamentals through real-world scenarios.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  Education -->
+        <section class="education-section">
+          <h2 class="section-title">
+            <i class="fas fa-user-graduate"></i> Education
+          </h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Bachelor’s in Cybersecurity</h3>
+                <span class="timeline-date">08/2020 – In Progress</span>
+              </div>
+              <div class="project-content">
+                <h4>University of Hafer Albatin</h4>
+                <ul>
+                  <li>GPA: 3.3 / 4.0</li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 💼 Experience -->
+        <section class="experience-section">
+          <h2 class="section-title">
+            <i class="fas fa-laptop-code"></i> Experience
+          </h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <h3>Cybersecurity Internship</h3>
+                <span class="timeline-date">06/2024 – 08/2024</span>
+              </div>
+              <div class="project-content">
+                <h4>King Fahad Medical City (KFMC)</h4>
+                <ul>
+                  <li>
+                    Led development of a full-stack ASP.NET app with SQL Server
+                    and C#.
+                  </li>
+                  <li>
+                    Managed UI/UX for key pages: login, dashboard, admin panel,
+                    and data views.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      const tablinks = document.getElementsByClassName("tab-links");
+      const tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (let tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (let tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+      const sidemenu = document.getElementById("nav-links");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-500px";
+      }
+    </script>
+    <script src="icons.js"></script>
+  </body>
+</html>
